@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}<title>praktika</title>{% endblock %}
+
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/base_style.css' %}">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+<section class="container">
+    <div id="toolbar">
+        <h1>Draw</h1>
+        <label for="stroke">Stroke</label>
+        <input id="stroke" name="stroke" type="color">
+        <label for="lineWidth">Line width</label>
+        <input id="lineWidth" name="lineWidth" type="number" value="5">
+        <button id="clear">Clear</button>
+        <form action="compute/" method="POST" id="saving_form">
+            {% csrf_token %}
+            <input type="hidden" name="canvasData" id="my_hidden">
+            <input type="submit" name="saveImg" value="submit" onclick="save()">
+        </form>
+    </div>
+    <div class="drawing-board">
+        <canvas id="drawing-board"></canvas>
+    </div>
+</section>
+<script src="{% static 'scripts/drawing-board.js' %}"></script>
+{% block content %} {% endblock %}
+</body>
+</html>
