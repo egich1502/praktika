@@ -5,8 +5,6 @@ const ctx = canvas.getContext('2d');
 const canvasOffsetX = canvas.offsetLeft;
 const canvasOffsetY = canvas.offsetTop;
 
-canvas.width = 256;
-canvas.height = 256;
 
 let isPainting = false;
 let lineWidth = 5;
@@ -36,7 +34,7 @@ const draw = (e) => {
     ctx.lineWidth = lineWidth;
     ctx.lineCap = 'round';
 
-    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY);
+    ctx.lineTo(e.clientX - canvasOffsetX, e.clientY - canvasOffsetY);
     ctx.stroke();
 }
 
@@ -54,7 +52,7 @@ canvas.addEventListener('mouseup', ev => {
 
 canvas.addEventListener('mousemove', draw)
 
-function save(){
+function save() {
     document.getElementById('my_hidden').value = canvas.toDataURL('image/png');
     document.forms["saving_form"].submit();
 }

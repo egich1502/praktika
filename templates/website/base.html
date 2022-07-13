@@ -19,14 +19,14 @@
         <label for="lineWidth">Line width</label>
         <input id="lineWidth" name="lineWidth" type="number" value="5">
         <button id="clear">Clear</button>
-        <form action="compute/" method="POST" id="saving_form">
+        <form action="/compute/" method="POST" id="saving_form">
             {% csrf_token %}
             <input type="hidden" name="canvasData" id="my_hidden">
             <input type="submit" name="saveImg" value="submit" onclick="save()">
         </form>
     </div>
-    <div class="drawing-board">
-        <canvas id="drawing-board"></canvas>
+    <div class="drawing-board" style="border: 1px solid black">
+        <canvas id="drawing-board" width="256" height="256"></canvas>
     </div>
 </section>
 <script src="{% static 'scripts/drawing-board.js' %}"></script>
