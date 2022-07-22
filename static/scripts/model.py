@@ -4,8 +4,6 @@ mnist = tf.keras.datasets.mnist  # mnist is a dataset of 28x28 images of handwri
 (x_train, y_train), (
     x_test, y_test) = mnist.load_data()  # unpacks images to x_train/x_test and labels to y_train/y_test
 
-#x_train = tf.image.resize(x_train, [256, 256])
-#x_test = tf.image.resize(x_test, [256, 256])
 x_train = tf.keras.utils.normalize(x_train, axis=1)  # scales data between 0 and 1
 x_test = tf.keras.utils.normalize(x_test, axis=1)  # scales data between 0 and 1
 
