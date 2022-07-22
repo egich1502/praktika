@@ -211,3 +211,6 @@ dmypy.json
 # Cython debug symbols
 cython_debug/
 
+test.py
+saved_photo.jpg
+

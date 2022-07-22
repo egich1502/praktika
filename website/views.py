@@ -1,4 +1,8 @@
+import PIL.Image
+import cv2.utils
 import io
+
+import cv2
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 import base64
@@ -9,7 +13,6 @@ from PIL import Image
 # Create your views here.
 
 model = load_model('static/models/test_model.h5')
-
 
 def index(request):
     return render(request, 'website/base.html')
@@ -25,3 +28,5 @@ def compute(request):
         return render(request, 'website/result.html', context={'result': result})
     else:
         return HttpResponseRedirect('/')
+
+
