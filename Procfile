@@ -1,1 +1,1 @@
-web: gunicorn praktika.wsgi --log-file-
+web: gunicorn praktika.wsgi
