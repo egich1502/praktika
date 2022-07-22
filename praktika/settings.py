@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'xb=_c$by2a9y$)m@y2tm4!qx#p!z6c
 
 DEBUG = bool(os.environ.get('DJANGO_DEBUG', True))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['egorm-praktika.herokuapp.com', '127.0.0.1']
 
 # Application definition
 
