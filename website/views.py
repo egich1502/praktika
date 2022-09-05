@@ -33,9 +33,9 @@ def compute(request):
                 b[i][j] = a[i][j].max()
 
         b[b > 0] = 255
-        b.reshape(-1, 28, 28, 1)
+        c = b.reshape(-1, 28, 28, 1)
 
-        result = np.argmax(model.predict([b]))
+        result = np.argmax(model.predict([c]))
         return render(request, 'website/result.html', context={'result': result})
     else:
         return HttpResponseRedirect('/')
