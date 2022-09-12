@@ -33,6 +33,7 @@ def compute(request):
                 b[i][j] = a[i][j].max()
 
         b[b > 0] = 255
+        b = b / 255
         c = b.reshape(-1, 28, 28, 1)
 
         result = np.argmax(model.predict([c]))
